@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
+    'drf_yasg',
+    'django-rest-swagger',
+    'corsheaders',
 
 ]
 import cloudinary
@@ -91,14 +94,14 @@ WSGI_APPLICATION = 'courseapp.wsgi.application'
 
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'app2',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': ''
     }
 }
-AUTH_USER_MODEL = 'course.User'
+AUTH_USER_MODEL = 'courseapp.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -140,3 +143,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True

@@ -3,8 +3,7 @@ from .models import Category, Lesson, Course, Tag
 from django.utils.html import mark_safe
 from django import forms
 from django import forms
-from ckeditor_uploader.widgets \
-    import CKEditorUploadingWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 class CourseForm(forms.ModelForm):

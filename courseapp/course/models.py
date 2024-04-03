@@ -19,10 +19,10 @@ class BaseModel(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50, null=False)
+    subject = models.CharField(max_length=50, null=False)
 
     def __str__(self):
-        return self.name
+        return self.subject
 
 
 class Course(BaseModel):
