@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'rest_framework',
+    'drf_yasg',
 
 ]
 import cloudinary
@@ -92,9 +93,9 @@ WSGI_APPLICATION = 'courseapp.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'app2',
+        'NAME': 'app1',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': 'Admin@123',
         'HOST': ''
     }
 }
