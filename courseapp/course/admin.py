@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Lesson, Course, Tag
+from .models import Category, Lesson, Course, Tag ,Comment
 from django.utils.html import mark_safe
 from django import forms
 from django import forms
@@ -35,3 +35,4 @@ admin.site.register(Course, CourseAdmin)
 admin.site.register(Category)
 admin.site.register(Lesson)
 admin.site.register(Tag)
+admin.site.register(Comment)

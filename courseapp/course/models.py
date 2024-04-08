@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 
 
 class User(AbstractUser):
-    pass
+    avatar = CloudinaryField(null=True)
 
 
 class BaseModel(models.Model):
@@ -39,22 +39,25 @@ class Course(BaseModel):
         unique_together = ('category', 'subject')
 
 
-class Lesson(BaseModel):
-    subject = models.CharField(max_length=250, null=False)
-    content = models.TextField()
-    image = CloudinaryField()
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    tag = models.ManyToManyField('Tag')
-
-    class Meta:
-        unique_together = ('course', 'subject')
-
-
 class Tag(BaseModel):
     name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
+
+
+class Lesson(BaseModel):
+    subject = models.CharField(max_length=250, null=False)
+    content = models.TextField()
+    image = CloudinaryField()
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    tag = models.ManyToManyField(Tag)
+
+    def __str__(self):
+        return self.subject
+
+
+
 
 
 class Interaction(BaseModel):

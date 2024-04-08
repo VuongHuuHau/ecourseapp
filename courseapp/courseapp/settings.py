@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'rest_framework',
     'drf_yasg',
+    'oauth2_provider',
 
 ]
 import cloudinary
@@ -56,6 +57,11 @@ cloudinary.config(
     api_key="282772237372816",
     api_secret="arLFw6bcb7O6m48dhQ-4Us7nAzc"
 )
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+    )
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -95,7 +101,7 @@ DATABASES = {
          'ENGINE': 'django.db.backends.mysql',
         'NAME': 'app1',
         'USER': 'root',
-        'PASSWORD': 'Admin@123',
+        'PASSWORD': '123456',
         'HOST': ''
     }
 }
@@ -141,3 +147,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLIENT_ID='2WerVS29qMcIMhnl40crvSsZJXv1yyFGTc0KQZFf'
+CLIENR_SECRET='ppGUkuWUMu0Ckg8M1MMnJX6VfHGU5rDcxFM8by97wXZNYqnvpZpGUXQTKZnGdcZSCWezfIw9Z4lqL9iGXgCHAcEg7VsUzPaxxuv6ceNSRmDqexPMAT0r0qi7FNKXKVYG'
